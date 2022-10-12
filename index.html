@@ -35,6 +35,9 @@
         <div class="pink">pink</div>
         <div class="purple">purple</div>
     </div>
+    <div>
+        <button id="custome-theme">Custome theme</button>
+    </div>
     <script>
         const body = document.querySelector ('body');
         const theme = document.querySelector ('#theme');
@@ -54,6 +57,12 @@
             body.style.backgroundColor = `${event.target.className}`;
         };
         
+        const customTheme = document.querySelector ('#custome-theme');
+        customTheme.addEventListener ('click', customColorClickHandler);
+
+        function customColorClickHandler () {
+            body.classList.toggle('custom-theme');
+        }
     </script>
 </body>
 </html>

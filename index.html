@@ -11,16 +11,24 @@
             color: black;
         }
         .theme-dark {
-            background-color: black;
+            background-color: rgb(46, 45, 45);
             color: white;
         }
     </style>
 </head>
 <body>
     <h1>Page theme</h1>
-
+    <div>
+        <button id="theme">Dark theme</button>
+    </div>
     <script>
-
+        const body = document.querySelector ('body');
+        const theme = document.querySelector ('#theme');
+        theme.addEventListener('click', themeClickHandler);
+        function themeClickHandler () {
+            body.classList.toggle('theme-light');
+            body.classList.toggle('theme-dark');
+        }
     </script>
 </body>
 </html>

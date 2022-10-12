@@ -63,6 +63,11 @@
         function customColorClickHandler () {
             body.classList.toggle('custom-theme');
         }
+
+        function customEventMessage (event, message) {
+            console.log (message, event);
+        }
+        document.addEventListener ('DOMContentLoaded', customEventMessage.bind(this, 'another message'));
     </script>
 </body>
 </html>

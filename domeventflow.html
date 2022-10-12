@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM EVENT FLOW</title>
+    <style>
+        div {
+            border: 1px solid black;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        1
+        <div>
+            2
+            <div>
+                3
+                <div>
+                    4
+                    <div>
+                        5
+                        <div>
+                            6
+                            <div>
+                                7
+                                <div>
+                                    8
+                                    <div>
+                                        9
+                                        <div>
+                                            10
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p></p>
+    <script>
+        function bubble (e) {
+            let p = document.querySelector("p");
+            console.log(p.innerHTML = e.target.innerHTML );
+        }
+
+        let divs = document.querySelectorAll ('div');
+        for (let i = 0; i < divs.length; i++) {
+            divs[i].addEventListener ('click', bubble, true);
+        }
+    </script>
+</body>
+</html>

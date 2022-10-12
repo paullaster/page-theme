@@ -11,15 +11,29 @@
             color: black;
         }
         .theme-dark {
-            background-color: rgb(46, 45, 45);
+            background-color: rgb(29, 28, 28);
             color: white;
         }
+        .custom-theme {
+            background-color: rgb(29, 28, 28);
+            color: white;
+        }
+        .colors { cursor: pointer; }
+        .colors:hover { cursor: pointer; }
     </style>
 </head>
 <body>
     <h1>Page theme</h1>
     <div>
         <button id="theme">Dark theme</button>
+    </div>
+    <div class="colors">
+        <div class="red">red</div>
+        <div class="green">green</div>
+        <div class="blue">blue</div>
+        <div class="yellow">yellow</div>
+        <div class="pink">pink</div>
+        <div class="purple">purple</div>
     </div>
     <script>
         const body = document.querySelector ('body');
@@ -29,6 +43,17 @@
             body.classList.toggle('theme-light');
             body.classList.toggle('theme-dark');
         }
+
+        const colors = document.querySelector ( '.colors');
+        const colorSheds = colors.querySelectorAll ( 'div');
+        colorSheds.forEach (selectColor);
+        function selectColor (color) {
+            color.addEventListener ( 'click', colorClickHandler);
+        };
+        function colorClickHandler (event) {
+            body.style.backgroundColor = `${event.target.className}`;
+        };
+        
     </script>
 </body>
 </html>

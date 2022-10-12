@@ -16,13 +16,13 @@
         </style>
     </head>
     <body>
-        <div class="box">
+        <div class="box" ondrop="dDrop()" ondragover="nDrop()">
             1
             <div id="dragme" ondragstart="dStart()" draggable="true">
                 Drag Me Please!
             </div>
         </div>
-        <div class="box" ondrop="dDrop()" ondragover="nDrop()">2</div>
+        <div class="box" ondrop="dDrop()" ondragover="nDrop()" draggable="true">2</div>
 
         <script>
             let holderItem;
